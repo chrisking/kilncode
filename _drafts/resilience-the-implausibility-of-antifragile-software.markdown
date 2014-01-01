@@ -12,7 +12,7 @@ Nassim Nicholas Taleb wrote Antifragile, a book advocating we ourselves become a
 
 Many have claimed that we have the ability to build software that itself is antifragile, including such techniques as continuous integration, 0 downtime migrations, and elaborate failover mechanisms. 
 
-In this post I will argue that these endeavors, while certainly improve our lives around software for all parties, they are in no way creating antifragile software. Additionally I will argue the best we can hope for is resilience or robustness in our codebases, and that is OK.
+In this post I will argue that these endeavors, while they certainly improve software for all parties, they in no way create antifragile software. Additionally I will argue the best we can hope for is resilience or robustness in our codebases, and that is OK.
 
 
 Sources: 
