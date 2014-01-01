@@ -20,6 +20,7 @@ Sources:
 1. Antifragile: Things That Gain from Disorder - Nassim Nicholas Taleb
 2. Resilience: Why Things Bounce Back - Andrew Zolli & Ann Marie Healy
 3. (http://odetocode.com/blogs/scott/archive/2013/06/21/antifragile-software.aspx)
+    * Probably going to be removed as a source, the document here highlights the incorrect idea of antifragile with Netflix's Chaos Monkey project, but doesn't delve into many details.
 4. (http://scn.sap.com/community/abap/blog/2013/12/01/antifragile-software)
 5. (http://onfoodandcoding.blogspot.com/2013/05/agile-is-antifragile.html)
 6. (http://www.virtualizationpractice.com/antifragile-systems-designing-for-agility-vs-stability-22536/)
