@@ -6,6 +6,14 @@ categories: software engineering, systems theory
 author: Chris King
 ---
 
+### What is Antifragile?
+
+Taleb defines Antifragile in his book "Antifragile" as: "beyond resilience or robustness. The resilient resists shocks and stays the same; the antifragile gets better." (from his book, excerpt here) [http://www.fooledbyrandomness.com/prologue.pdf] Examples he provies for antifragile entities include media pundits who's reputation doesn't depend on being correct, and muscles as they rebound to be even stronger than they were before the stressor was applied.
+
+### Antifragility and Software
+
+With antifragility established as a goal to strive for fresh in their minds, many developers who read the text started to float the idea around of antifragile software, or software that becomes more powerful when chaos is applied to it.
+
 # Notes:
 
 Nassim Nicholas Taleb wrote Antifragile, a book advocating we ourselves become antifragile, or that we become better trhough chaos and disorder around us.
