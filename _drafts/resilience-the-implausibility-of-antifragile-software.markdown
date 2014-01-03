@@ -8,11 +8,33 @@ author: Chris King
 
 ### What is Antifragile?
 
-Taleb defines Antifragile in his book "Antifragile" as: "beyond resilience or robustness. The resilient resists shocks and stays the same; the antifragile gets better." (from his book, excerpt here) [http://www.fooledbyrandomness.com/prologue.pdf] Examples he provies for antifragile entities include media pundits who's reputation doesn't depend on being correct, and muscles as they rebound to be even stronger than they were before the stressor was applied.
+Taleb defines antifragile in his book "Antifragile" as: "beyond resilience or robustness. The resilient resists shocks and stays the same; the antifragile gets better." (from his book, excerpt here) [http://www.fooledbyrandomness.com/prologue.pdf] Examples he provies for antifragile entities include media pundits who's reputation doesn't depend on being correct, and muscles as they rebound to be even stronger than they were before the stressor was applied.
 
 ### Antifragility and Software
 
 With antifragility established as a goal to strive for fresh in their minds, many developers who read the text started to float the idea around of antifragile software, or software that becomes more powerful when chaos is applied to it.
+
+Given how many people have struggled with fragile software this seems like an amazing goal to have, but what would that actually look like? Can code actually become stronger when chaos and failures are hurled at it?
+
+### Finding Fragility
+
+Let's start with a simple python example of a function:
+
+```python
+def add_numbers(numbers):
+    """
+    takes in a simple array of numbers. It will then iterate over each number,
+    while doing so it adds the numbers together, finally it returns the result.
+    """
+    sum = 0
+    for number in numbers:
+        sum += number
+    return sum
+```
+
+If the array of integers [1,2,3] is passed, this function will output 6, as expected. Surprisingly Python even handles [1.99,2.5,3.0] correctly yielding 7.49. However if ["one", "two", "three"] is supplied an exception is thrown. Specifically "TypeError: unsupported operand type(s) for +=: 'int' and 'str'" 
+
+Providing unit tests and more thorough documentation would help prevent a developer from checking an error like this into production as the test would fail, or they'd see the error of their thoughts before a keystroke was ever entered. That however is not antifragility, that's plain robustness. If code using this function was checked into the codebase with incorrect inputs that caused a failure, the code would not become stronger during the failure, it would simply fail. That is not antifragility at all, that is fragility, plain and simple.
 
 # Notes:
 
