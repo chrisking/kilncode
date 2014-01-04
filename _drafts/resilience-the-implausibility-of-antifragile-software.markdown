@@ -8,19 +8,19 @@ author: Chris King
 
 ### What is Antifragile?
 
-Taleb defines antifragile in his book "Antifragile" as: "beyond resilience or robustness. The resilient resists shocks and stays the same; the antifragile gets better." [excerpt here](http://www.fooledbyrandomness.com/prologue.pdf) The examples provided for antifragile entities include media pundits who's reputation doesn't depend on being correct and muscles as they rebound to be even stronger than they were before the stressor was applied.
+Nassim Nicholas Taleb defines antifragile in his book "Antifragile" as: "beyond resilience or robustness. The resilient resists shocks and stays the same; the antifragile gets better." [excerpt here](http://www.fooledbyrandomness.com/prologue.pdf) The examples provided for antifragile entities include media pundits, whose reputations don't depend on being correct, and muscles, as they rebound to be even stronger than they were before the stressor was applied.
 
 ### Antifragility and Software
 
-With antifragility established as a goal to strive for fresh in their minds, many developers who read the text started to float the idea around of antifragile software, or software that becomes more powerful when chaos is applied to it.
+With antifragility established as a goal to strive for, many developers who read the text started to float the idea of antifragile software, or software that becomes more powerful when chaos is applied to it, around.
 
-Given how many people have struggled with fragile software this seems like an amazing goal to have, but what would that actually look like? Can code actually become stronger when chaos and failures are hurled at it?
+Given how many people have struggled with fragile software, antifragile software seems like an amazing goal to have, but what would that actually look like? Can code actually become stronger when chaos and failures are hurled at it?
 
-In Singh's blog post [Anti-fragile Software](http://scn.sap.com/community/abap/blog/2013/12/01/antifragile-software) he begins with correct definitions for fragility, robustness, and antifragility, then proceeds to discuss how software for a long time has been stuck in the mindset of robustness being the end goal.
+In Singh's (add first name) blog post [Anti-fragile Software](http://scn.sap.com/community/abap/blog/2013/12/01/antifragile-software) he begins with the definitions for fragility, robustness, and antifragility, then proceeds to discuss how software for a long time has been stuck in the mindset of robustness being the end goal.
 
 > *Traditionally we have been designing software systems trying to make them robust and we expect them to work under all conditions.This is becoming more challenging as software is becoming much more complex and the number of components is increasing. *
 
-Within a few paragraphs he then makes the following statement: 
+Within a few paragraphs he then makes  the following statement: 
 
 > *We spend a great deal of effort in making a system robust but much in making it antifragile.The rough equivalent of antifragile is resilience in common language - it is an attribute of a system that enables it to deal with failure in a way that doesn’t cause the entire system to fail. *
 
