@@ -56,7 +56,7 @@ Singh's solutions that will be discussed later:
 
 ## Finding Fragility
 
-Let's start with a simple python example of a function:
+Let's start with a simple Python example of a function:
 
 ```python
 def add_numbers(numbers):
