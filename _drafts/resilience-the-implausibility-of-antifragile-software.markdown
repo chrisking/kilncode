@@ -27,7 +27,7 @@ In the above snippet he references his earlier work on [Black Swans](http://www.
 
 ## Antifragility and Software
 
-With antifragility established as a goal to strive for, many developers who read the text started to float the idea of antifragile software, or software that becomes more powerful when chaos is applied to it, around.
+With antifragility established as a goal to strive for, many developers who read Taleb's book started to float the idea of antifragile software, or software that becomes more powerful when chaos is applied to it, around.
 
 Given how many people have struggled with fragile software, antifragile software seems like an amazing goal to have, but what would that actually look like? Can code actually become stronger when chaos and failures are hurled at it?
 
@@ -79,6 +79,8 @@ By deploying an application to a platform like [Amazon Web Services](http://aws.
 Assuming the application has been designed to make use of distributed computer systems, it should be able to dynamically add new instances of the application to handle performance needs as they manifest(Scale). Swarming is the accomplished by the distributed units all coming together to continue the applications mission, whatever that may be(Swarm).
 
 Even with an infrastructure that robust and dynamic, the application is still fundamentally fragile, a Black Swan event is just as likely to occur. After all a traffic spike is not a surprise nor does it have a major effect if the application was designed with the three S's in mind. A Black Swan for the application would could be some industry changing event like a new communications medium that is not supported.
+
+These steps get us to Singh's goal of fault tolerant applications, but what about continually testing these faults? Continual testing such as Netflix's [Chaos Monkey](https://github.com/Netflix/SimianArmy) has certainly helped [Netflix](http://arstechnica.com/information-technology/2012/07/netflix-attacks-own-network-with-chaos-monkey-and-now-you-can-too/) to better serve its users, but again these are all from potentially known errors, none of them meet the 3 critical points to be a Black Swan and thus make a case for an Antifragile software entity.  
 
 ## Conclusion
 
