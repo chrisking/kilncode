@@ -39,6 +39,8 @@ In Vikas Singh's blog post [Anti-fragile Software](http://scn.sap.com/community/
   * Robust : This is the normal condition of most of the products we expect to work. It will include the wine glasses you’re sending to the friend, our bodies, computer systems.
   * Antifragile: These gain from volatility. It’s performance thrives when confronted with volatility.
 
+Sign later writes of the challenges with building more fault tolerant systems:
+
 > *Traditionally we have been designing software systems trying to make them robust and we expect them to work under all conditions.This is becoming more challenging as software is becoming much more complex and the number of components is increasing. *
 
 Within a few paragraphs he then makes the following statement: 
