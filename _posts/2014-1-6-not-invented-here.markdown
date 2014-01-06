@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  "Not Hosted Here"
-date:   2014-1-5 18:59:03
-categories: software engineering, cognitive bias, new job
+title:  "Not Invented Here"
+date:   2014-1-6 18:59:03
+categories: 
 author: Matt Brown
 ---
 
-### Not Invented Here
+
 
 The past few weeks I've been thinking a lot about the "Not Invented Here" bias where a person subconsciously avoid innovations not created by them or their organization. The reasons stated for the bias can vary from cost motivations to fear of something you didn't write yourself. Recently I discovered myself employing this bias and learned to overcome it. 
 
