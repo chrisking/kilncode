@@ -6,7 +6,7 @@ categories:
 author: Matt Brown
 ---
 
-
+##### By Matt Brown
 
 The past few weeks I've been thinking a lot about the "Not Invented Here" bias where a person subconsciously avoid innovations not created by them or their organization. The reasons stated for the bias can vary from cost motivations to fear of something you didn't write yourself. Recently I discovered myself employing this bias and learned to overcome it. 
 
