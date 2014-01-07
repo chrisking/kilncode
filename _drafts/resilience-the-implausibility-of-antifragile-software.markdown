@@ -14,7 +14,7 @@ He continues to later help identify objects as antifragile or not:
 
 > * It is far easier to figure out if something is fragile than to predict the occurrence of an event that may harm it. Fragility can be measured; risk is not measurable (outside of casinos or the minds of people who call themselves “risk experts”). This provides a solution to what I’ve called the Black Swan problem—the impossibility of calculating the risks of consequential rare events and predicting their occurrence. Sensitivity to harm from volatility is tractable, more so than forecasting the event that would cause the harm. So we propose to stand our current approaches to prediction, prognostication, and risk management on their heads. In every domain or area of application, we propose rules for moving from the fragile toward the antifragile, through reduction of fragility or harnessing antifragility. And we can almost always detect antifragility (and fragility) using a simple test of asymmetry: anything that has more upside than downside from random events (or certain shocks) is anti- fragile; the reverse is fragile. * 
 
-In the above snippet he references his earlier work on [Black Swans](http://www.amazon.com/The-Black-Swan-Improbable-Robustness/dp/081297381X/) and outlines the goal of antifragile entities is to withstand Black Swan events when they arise in the domain of the antifragile entity. The criteria as defined by the author for a Black Swan [wikipedia](http://en.wikipedia.org/wiki/Black_swan_theory#Identifying_a_black_swan_event):
+In the above snippet Taleb references his earlier work on [Black Swans](http://www.amazon.com/The-Black-Swan-Improbable-Robustness/dp/081297381X/) and proposes that the goal of antifragile entities is to withstand Black Swan events when they arise. The criteria as defined by the author for a Black Swan [wikipedia](http://en.wikipedia.org/wiki/Black_swan_theory#Identifying_a_black_swan_event):
 
     1. The event is a surprise (to the observer).
     2. The event has a major effect.
@@ -27,11 +27,11 @@ In the above snippet he references his earlier work on [Black Swans](http://www.
 
 ## Antifragility and Software
 
-With antifragility established as a goal to strive for, many developers who read Taleb's book started to float the idea of antifragile software, or software that becomes more powerful when chaos is applied to it, around.
+With antifragility established as a goal to strive for, many developers who read Taleb's book started to float around the idea of antifragile software, or software that becomes more powerful when chaos is applied to it.
 
 Given how many people have struggled with fragile software, antifragile software seems like an amazing goal to have, but what would that actually look like? Can code actually become stronger when chaos and failures are hurled at it?
 
-In Vikas Singh's blog post [Anti-fragile Software](http://scn.sap.com/community/abap/blog/2013/12/01/antifragile-software) he begins with the definitions for fragility, robustness, and antifragility, then proceeds to discuss how software for a long time has been stuck in the mindset of robustness being the end goal.
+In Vikas Singh's blog post [Anti-fragile Software](http://scn.sap.com/community/abap/blog/2013/12/01/antifragile-software) he begins with the definitions for fragility, robustness, and antifragility, then proceeds to discuss how software has been stuck in the mindset of robustness being the end goal.
 
 * Singh's definitions as mentioned above
 
@@ -72,17 +72,17 @@ def add_numbers(numbers):
 
 If the array of integers [1,2,3] is passed, this function will output 6, as expected. Surprisingly Python even handles [1.99,2.5,3.0] correctly yielding 7.49. However if ["one", "two", "three"] is supplied an exception is thrown. Specifically "TypeError: unsupported operand type(s) for +=: 'int' and 'str'" 
 
-Providing unit tests and more thorough documentation would help prevent a developer from checking an error like this into production as the test would fail, or they'd see the error of their thoughts before a keystroke was ever entered. That however is not antifragility, that's plain robustness. If code using this function was checked into the codebase with incorrect inputs that caused a failure, the code would not become stronger during the failure, it would simply fail. That is not antifragility at all, that is fragility, plain and simple.
+Providing unit tests and more thorough documentation would help prevent a developer from checking an error like this into production as the test would fail, or they'd see the error of their thoughts before a keystroke was ever entered. That solution is not antifragility; it is plain robustness. If code using this function was checked into the codebase with incorrect inputs that caused a failure, the code would not become stronger during the failure, it would simply fail. That is not antifragility at all, that is fragility, plain and simple.
 
 ## Robust Yet Fragile (RYF)
 
-By deploying an application to a platform like [Amazon Web Services](http://aws.amazon.com/) the application gains the ability to "Sense, Scale, and Swarm" [Resilience p. 61](http://www.amazon.com/Resilience-Why-Things-Bounce-Back/dp/1451683812/ref=tmm_pap_swatch_0?_encoding=UTF8&sr=8-1&qid=1388748431). Using monitoring services like [New Relic](http://newrelic.com/) the application developers can know when performance impacting conditions are occuring and these could be a simple traffic spike or a piece of infrastructure may have failed(Sense). 
+By deploying an application to a platform like [Amazon Web Services](http://aws.amazon.com/) the application gains the ability to "Sense, Scale, and Swarm" [Resilience p. 61](http://www.amazon.com/Resilience-Why-Things-Bounce-Back/dp/1451683812/ref=tmm_pap_swatch_0?_encoding=UTF8&sr=8-1&qid=1388748431). Using monitoring services like [New Relic](http://newrelic.com/) the application developers can sense when performance impacting conditions are occuring. Such conditions could be a simple traffic spike or a piece of infrastructure that may have failed. 
 
-Assuming the application has been designed to make use of distributed computer systems, it should be able to dynamically add new instances of the application to handle performance needs as they manifest(Scale). Swarming is the accomplished by the distributed units all coming together to continue the applications mission, whatever that may be(Swarm).
+Assuming the application has been designed to make use of distributed computer systems, it should be able to scale, or dynamically add new instances of the application to handle performance needs as they manifest. Swarming can be accomplished by the distributed units all coming together to continue the applications mission, whatever that may be.
 
-Even with an infrastructure that robust and dynamic, the application is still fundamentally fragile, a Black Swan event is just as likely to occur. After all a traffic spike is not a surprise nor does it have a major effect if the application was designed with the three S's in mind. A Black Swan for the application would could be some industry changing event like a new communications medium that is not supported.
+Even with an infrastructure that robust and dynamic, the application is still fundamentally fragile, a Black Swan event is just as likely to occur. After all a traffic spike is not a surprise nor does it have a major effect if the application was designed with the three S's in mind. For instance, a new communications medium that is not supported could arise.
 
-These steps get us to Singh's goal of fault tolerant applications, but what about continually testing these faults? Continual testing such as Netflix's [Chaos Monkey](https://github.com/Netflix/SimianArmy) has certainly helped [Netflix](http://arstechnica.com/information-technology/2012/07/netflix-attacks-own-network-with-chaos-monkey-and-now-you-can-too/) to better serve its users, but again these are all from potentially known errors, none of them meet the 3 critical points to be a Black Swan and thus make a case for an Antifragile software entity.  
+Sense, scale, and swarm get us to Singh's goal of fault tolerant applications, but what about continually testing these faults? Continual testing such as Netflix's [Chaos Monkey](https://github.com/Netflix/SimianArmy) has certainly helped [Netflix](http://arstechnica.com/information-technology/2012/07/netflix-attacks-own-network-with-chaos-monkey-and-now-you-can-too/) to better serve its users, but again these are all from potentially known errors. None of them meet the 3 critical points to be a Black Swan and thus do not make a case for an Antifragile software entity.  
 
 ## Conclusion
 
