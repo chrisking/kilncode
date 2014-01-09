@@ -1,3 +1,5 @@
 name: Kilncode.com
 markdown: redcarpet
 pygments: true
+description: Kilncode.com, Thoughts on the Creation of Software
+url: http://klincode.com
