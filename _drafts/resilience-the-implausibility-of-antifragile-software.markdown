@@ -86,6 +86,8 @@ Sense, scale, and swarm get us to Singh's goal of fault tolerant applications, b
 
 ## Conclusion
 
+By creating robust yet fragile software, we are removing many known issues such as single server failure or data loss. We have done nothing to address the impact of a Black Swan, as by definition, we cannot do anything, and having done all we can
+
 Given the complexity from distrubted systems we are probably opening ourselves up to many more potential Black Swans. We are a the same time removing a ton of known issues and deploying software that is resilient to most of our known attackers, and given the dynamic nature of our industry that is probably the smart thing to do.
 
 Rather than focusing on making software antifragile (Some form of intelligent AI that rewrites itself upon a stressor), we gain by creating simpler projects that properly handle a known set of conditions and address some need we as humans have identified.
