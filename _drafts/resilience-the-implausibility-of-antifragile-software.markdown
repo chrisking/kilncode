@@ -6,6 +6,10 @@ categories: software engineering, systems theory
 author: Chris King
 ---
 
+## Intro
+
+Problem: Nassim Nicholas Taleb wrote a book called "Antifragile: Things That Gain from Disorder", this book inspired many to strive to create "antifragile" software. In these readers attempts to bring Taleb's ideas to life, they changed the definitions of many key words, applied old ideas, called them new, and are claiming to have achieved antifragile software. While none of there changes are necessarily harmful to a project, it does a great injustice to the ideas of something that is antifragile and could ensure a false sense of security in those affiliated with the software.
+
 ## What is Antifragile?
 
 Nassim Nicholas Taleb defines antifragile in his book "Antifragile" as: "beyond resilience or robustness. The resilient resists shocks and stays the same; the antifragile gets better." [excerpt here](http://www.fooledbyrandomness.com/prologue.pdf) The examples provided for antifragile entities include media pundits, whose reputations don't depend on being correct, and muscles, as they rebound to be even stronger than they were before the stressor was applied.
@@ -24,7 +28,6 @@ In the above snippet Taleb references his earlier work on [Black Swans](http://w
     perception by individuals
 
 
-
 ## Antifragility and Software
 
 With antifragility established as a goal to strive for, many developers who read Taleb's book started to float around the idea of antifragile software, or software that becomes more powerful when chaos is applied to it.
@@ -33,7 +36,14 @@ Given how many people have struggled with fragile software, antifragile software
 
 In Vikas Singh's blog post [Anti-fragile Software](http://scn.sap.com/community/abap/blog/2013/12/01/antifragile-software) he begins with the definitions for fragility, robustness, and antifragility, then proceeds to discuss how software has been stuck in the mindset of robustness being the end goal.
 
-* Singh's definitions as mentioned above
+* Definitions for Fragile, Resilient, Resilient, Black Swan, and Antifragile:
+  * Fragile - (of an object) easily broken or damaged (Merriam-Webster)[http://www.merriam-webster.com/dictionary/fragile]
+  * Resilient - The capacity of a system, enterprise, or a person to maintain its core purpose and integrity in the face of dramatically changed circumstances. (Resilience p7)
+  * Robust - A system or entity that has been hardened so that it is not easily broken, while lacking the recovery abilities of a resilient system. ( Resilience p13)
+  * Black Swan - 
+  * Antifragile - The capacity of a system, enterprise, or a person to thrive during and after a Black Swan event. (Self compiled from Antifragile)
+
+* Singh's definitions as mentioned above( *I do not fully endorse these definitions* )
 
   * Fragile : This is something that doesn’t like volatility. An example will be a package of wine glasses you’re sending to a friend.
   * Robust : This is the normal condition of most of the products we expect to work. It will include the wine glasses you’re sending to the friend, our bodies, computer systems.
@@ -76,6 +86,8 @@ Providing unit tests and more thorough documentation would help prevent a develo
 
 ## Robust Yet Fragile (RYF)
 
+TODO: Define RYF (Resilience p27)
+
 By deploying an application to a platform like [Amazon Web Services](http://aws.amazon.com/) the application gains the ability to "Sense, Scale, and Swarm" [Resilience p. 61](http://www.amazon.com/Resilience-Why-Things-Bounce-Back/dp/1451683812/ref=tmm_pap_swatch_0?_encoding=UTF8&sr=8-1&qid=1388748431). Using monitoring services like [New Relic](http://newrelic.com/) the application developers can sense when performance impacting conditions are occuring. Such conditions could be a simple traffic spike or a piece of infrastructure that may have failed. 
 
 Assuming the application has been designed to make use of distributed computer systems, it should be able to scale, or dynamically add new instances of the application to handle performance needs as they manifest. Swarming can be accomplished by the distributed units all coming together to continue the applications mission, whatever that may be.
@@ -84,7 +96,11 @@ Even with an infrastructure that robust and dynamic, the application is still fu
 
 Sense, scale, and swarm get us to Singh's goal of fault tolerant applications, but what about continually testing these faults? Continual testing such as Netflix's [Chaos Monkey](https://github.com/Netflix/SimianArmy) has certainly helped [Netflix](http://arstechnica.com/information-technology/2012/07/netflix-attacks-own-network-with-chaos-monkey-and-now-you-can-too/) to better serve its users, but again these are all from potentially known errors. None of them meet the 3 critical points to be a Black Swan and thus do not make a case for an Antifragile software entity.  
 
-## Conclusion
+## Resilient Software
+
+TODO: Move the three S's out of RYF and include them here.
+
+## Conclusion (ALL OF THIS IS BAD)
 
 By creating robust yet fragile software, we are removing many known issues such as single server failure or data loss. We have done nothing to address the impact of a Black Swan, as by definition, we cannot do anything, and having done all we can
 
