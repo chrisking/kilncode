@@ -8,11 +8,11 @@ author: Chris King
 
 ## Intro
 
-Problem: Nassim Nicholas Taleb wrote a book called "Antifragile: Things That Gain from Disorder", this book inspired many to strive to create "antifragile" software. In these readers attempts to bring Taleb's ideas to life, they changed the definitions of many key words, applied old ideas, called them new, and are claiming to have achieved antifragile software. While none of there changes are necessarily harmful to a project, it does a great injustice to the ideas of something that is antifragile and could ensure a false sense of security in those affiliated with the software.
+Nassim Nicholas Taleb wrote  "Antifragile: Things That Gain from Disorder", this book inspired many to strive to create "antifragile" software. In these readers attempts to bring Taleb's ideas to life, they changed the definitions of many key words, applied old ideas, called them new, and are claiming to have achieved antifragile software. While none of there changes are necessarily harmful to a project, it does a great injustice to the ideas of something that is antifragile and could ensure a false sense of security in those affiliated with the software.
 
 ## What is Antifragile?
 
-Nassim Nicholas Taleb defines antifragile in his book "Antifragile" as: "beyond resilience or robustness. The resilient resists shocks and stays the same; the antifragile gets better." [excerpt here](http://www.fooledbyrandomness.com/prologue.pdf) The examples provided for antifragile entities include media pundits, whose reputations don't depend on being correct, and muscles, as they rebound to be even stronger than they were before the stressor was applied.
+In Taleb's Book he defines antifragile as: "beyond resilience or robustness. The resilient resists shocks and stays the same; the antifragile gets better." [excerpt here](http://www.fooledbyrandomness.com/prologue.pdf) The examples provided for antifragile entities include media pundits, whose reputations don't depend on being correct, and muscles, as they rebound to be even stronger than they were before the stressor was applied.
 
 He continues to later help identify objects as antifragile or not:
 
@@ -20,12 +20,12 @@ He continues to later help identify objects as antifragile or not:
 
 In the above snippet Taleb references his earlier work on [Black Swans](http://www.amazon.com/The-Black-Swan-Improbable-Robustness/dp/081297381X/) and proposes that the goal of antifragile entities is to withstand Black Swan events when they arise. The criteria as defined by the author for a Black Swan [wikipedia](http://en.wikipedia.org/wiki/Black_swan_theory#Identifying_a_black_swan_event):
 
-    1. The event is a surprise (to the observer).
-    2. The event has a major effect.
-    3. After the first recorded instance of the event, it is rationalized by hindsight, 
-    as if it could have been expected; that is, the relevant data were available but 
-    unaccounted for in risk mitigation programs. The same is true for the personal 
-    perception by individuals
+1. The event is a surprise (to the observer).
+2. The event has a major effect.
+3. After the first recorded instance of the event, it is rationalized by hindsight, 
+as if it could have been expected; that is, the relevant data were available but 
+unaccounted for in risk mitigation programs. The same is true for the personal 
+perception by individuals
 
 
 ## Antifragility and Software
@@ -37,17 +37,18 @@ Given how many people have struggled with fragile software, antifragile software
 In Vikas Singh's blog post [Anti-fragile Software](http://scn.sap.com/community/abap/blog/2013/12/01/antifragile-software) he begins with the definitions for fragility, robustness, and antifragility, then proceeds to discuss how software has been stuck in the mindset of robustness being the end goal.
 
 * Definitions for Fragile, Resilient, Resilient, Black Swan, and Antifragile:
-  * Fragile - (of an object) easily broken or damaged (Merriam-Webster)[http://www.merriam-webster.com/dictionary/fragile]
-  * Resilient - The capacity of a system, enterprise, or a person to maintain its core purpose and integrity in the face of dramatically changed circumstances. (Resilience p7)
-  * Robust - A system or entity that has been hardened so that it is not easily broken, while lacking the recovery abilities of a resilient system. ( Resilience p13)
-  * Black Swan - 
-  * Antifragile - The capacity of a system, enterprise, or a person to thrive during and after a Black Swan event. (Self compiled from Antifragile)
+
+    * Fragile - (of an object) easily broken or damaged (Merriam-Webster)[http://www.merriam-webster.com/dictionary/fragile]
+    * Resilient - The capacity of a system, enterprise, or a person to maintain its core purpose and integrity in the face of dramatically changed circumstances. (Resilience p7)
+    * Robust - A system or entity that has been hardened so that it is not easily broken, while lacking the recovery abilities of a resilient system. ( Resilience p13)
+    * Black Swan - 
+    * Antifragile - "Beyond resilience or robustness. The resilient resists shocks and stays the same; the antifragile gets better." [excerpt here](http://www.fooledbyrandomness.com/prologue.pdf)
 
 * Singh's definitions as mentioned above( *I do not fully endorse these definitions* )
 
-  * Fragile : This is something that doesn’t like volatility. An example will be a package of wine glasses you’re sending to a friend.
-  * Robust : This is the normal condition of most of the products we expect to work. It will include the wine glasses you’re sending to the friend, our bodies, computer systems.
-  * Antifragile: These gain from volatility. It’s performance thrives when confronted with volatility.
+    * Fragile : This is something that doesn’t like volatility. An example will be a package of wine glasses you’re sending to a friend.
+    * Robust : This is the normal condition of most of the products we expect to work. It will include the wine glasses you’re sending to the friend, our bodies, computer systems.
+    * Antifragile: These gain from volatility. It’s performance thrives when confronted with volatility.
 
 Sign later writes of the challenges with building more fault tolerant systems:
 
