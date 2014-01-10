@@ -8,17 +8,19 @@ author: Chris King
 
 ## Intro
 
-Nassim Nicholas Taleb wrote  "Antifragile: Things That Gain from Disorder", this book inspired many to strive to create "antifragile" software. In these readers attempts to bring Taleb's ideas to life, they changed the definitions of many key words, applied old ideas, called them new, and are claiming to have achieved antifragile software. While none of there changes are necessarily harmful to a project, it does a great injustice to the ideas of something that is antifragile and could ensure a false sense of security in those affiliated with the software.
+In the field of software engineering, we as developers are always striving for improvements in our process of building software. We seek to improve the total throughput of our systems, their scalability to performance demands, and the clarity of the codebase. During this search, countless methodologies have been created (Test Driven Development, Agile, Waterfall, Domain Driven Development, Behavior Driven Development, etc), these methodologies all are constantly evoloving and changing due to research in our own field, and in others like behavioral economics, complexity theory, and systems theory.
+
+The key to understanding and learning from any discipline is clear communication of the ideas and concepts that are being discussed. This article aims to illustrate ways in which a few developers have misinterpreted the research on antifragility, and then to properly tie what our discipline is doing to the concepts of antifragility.
+
+The concepts of fragility, robustness, resilience, and antifragility are useful models to classify the strengths and weaknesses of a system. By understanding these concepts we can hope to identify how much we should rely on our applications and what we can do to improve our aplications.
 
 ## What is Antifragile?
 
-In Taleb's Book he defines antifragile as: "beyond resilience or robustness. The resilient resists shocks and stays the same; the antifragile gets better." [excerpt here](http://www.fooledbyrandomness.com/prologue.pdf) The examples provided for antifragile entities include media pundits, whose reputations don't depend on being correct, and muscles, as they rebound to be even stronger than they were before the stressor was applied.
+In Nassim Nicholas Taleb's "Antifragile" he defines antifragile as: "beyond resilience or robustness. The resilient resists shocks and stays the same; the antifragile gets better." [excerpt here](http://www.fooledbyrandomness.com/prologue.pdf) He continues, helping us identify objects as antifragile or not:
 
-He continues to later help identify objects as antifragile or not:
+> "It is far easier to figure out if something is fragile than to predict the occurrence of an event that may harm it. Fragility can be measured; risk is not measurable (outside of casinos or the minds of people who call themselves “risk experts”). This provides a solution to what I’ve called the Black Swan problem—the impossibility of calculating the risks of consequential rare events and predicting their occurrence. Sensitivity to harm from volatility is tractable, more so than forecasting the event that would cause the harm. So we propose to stand our current approaches to prediction, prognostication, and risk management on their heads. In every domain or area of application, we propose rules for moving from the fragile toward the antifragile, through reduction of fragility or harnessing antifragility. And we can almost always detect antifragility (and fragility) using a simple test of asymmetry: anything that has more upside than downside from random events (or certain shocks) is anti- fragile; the reverse is fragile."
 
-> * It is far easier to figure out if something is fragile than to predict the occurrence of an event that may harm it. Fragility can be measured; risk is not measurable (outside of casinos or the minds of people who call themselves “risk experts”). This provides a solution to what I’ve called the Black Swan problem—the impossibility of calculating the risks of consequential rare events and predicting their occurrence. Sensitivity to harm from volatility is tractable, more so than forecasting the event that would cause the harm. So we propose to stand our current approaches to prediction, prognostication, and risk management on their heads. In every domain or area of application, we propose rules for moving from the fragile toward the antifragile, through reduction of fragility or harnessing antifragility. And we can almost always detect antifragility (and fragility) using a simple test of asymmetry: anything that has more upside than downside from random events (or certain shocks) is anti- fragile; the reverse is fragile. * 
-
-In the above snippet Taleb references his earlier work on [Black Swans](http://www.amazon.com/The-Black-Swan-Improbable-Robustness/dp/081297381X/) and proposes that the goal of antifragile entities is to withstand Black Swan events when they arise. The criteria as defined by the author for a Black Swan [wikipedia](http://en.wikipedia.org/wiki/Black_swan_theory#Identifying_a_black_swan_event):
+In the above snippet Taleb references his earlier work on [Black Swans](http://www.amazon.com/The-Black-Swan-Improbable-Robustness/dp/081297381X/) and proposes that the goal of antifragile entities is to withstand Black Swan events when they arise and to be made better by them. The criteria as defined by Taleb for a Black Swan [wikipedia](http://en.wikipedia.org/wiki/Black_swan_theory#Identifying_a_black_swan_event):
 
 1. The event is a surprise (to the observer).
 2. The event has a major effect.
@@ -27,42 +29,41 @@ as if it could have been expected; that is, the relevant data were available but
 unaccounted for in risk mitigation programs. The same is true for the personal 
 perception by individuals
 
+Before continuing it would be useful to define all of the core terms and how they will be used through this article:
 
-## Antifragility and Software
-
-With antifragility established as a goal to strive for, many developers who read Taleb's book started to float around the idea of antifragile software, or software that becomes more powerful when chaos is applied to it.
+* Fragile - (of an object) easily broken or damaged (Merriam-Webster)[http://www.merriam-webster.com/dictionary/fragile]
+* Resilient - The capacity of a system, enterprise, or a person to maintain its core purpose and integrity in the face of dramatically changed circumstances. (Resilience p7)
+* Robust - A system or entity that has been hardened so that it is not easily broken, while lacking the recovery abilities of a resilient system. ( Resilience p13)
+* Antifragile - "Beyond resilience or robustness. The resilient resists shocks and stays the same; the antifragile gets better." [excerpt here](http://www.fooledbyrandomness.com/prologue.pdf)
 
 Given how many people have struggled with fragile software, antifragile software seems like an amazing goal to have, but what would that actually look like? Can code actually become stronger when chaos and failures are hurled at it?
 
+## Antifragility and Software
+
+With antifragility established as a goal to strive for, many developers who read Taleb's book started to float around the idea of antifragile software, or software that becomes more powerful when a Black Swan arises.
+
 In Vikas Singh's blog post [Anti-fragile Software](http://scn.sap.com/community/abap/blog/2013/12/01/antifragile-software) he begins with the definitions for fragility, robustness, and antifragility, then proceeds to discuss how software has been stuck in the mindset of robustness being the end goal.
 
-* Definitions for Fragile, Resilient, Resilient, Black Swan, and Antifragile:
+Singh's definitions as mentioned above( *these may be confusing* ):
 
-    * Fragile - (of an object) easily broken or damaged (Merriam-Webster)[http://www.merriam-webster.com/dictionary/fragile]
-    * Resilient - The capacity of a system, enterprise, or a person to maintain its core purpose and integrity in the face of dramatically changed circumstances. (Resilience p7)
-    * Robust - A system or entity that has been hardened so that it is not easily broken, while lacking the recovery abilities of a resilient system. ( Resilience p13)
-    * Black Swan - 
-    * Antifragile - "Beyond resilience or robustness. The resilient resists shocks and stays the same; the antifragile gets better." [excerpt here](http://www.fooledbyrandomness.com/prologue.pdf)
-
-* Singh's definitions as mentioned above( *I do not fully endorse these definitions* )
-
-    * Fragile : This is something that doesn’t like volatility. An example will be a package of wine glasses you’re sending to a friend.
-    * Robust : This is the normal condition of most of the products we expect to work. It will include the wine glasses you’re sending to the friend, our bodies, computer systems.
-    * Antifragile: These gain from volatility. It’s performance thrives when confronted with volatility.
+* Fragile : This is something that doesn’t like volatility. An example will be a package of wine glasses you’re sending to a friend.
+* Robust : This is the normal condition of most of the products we expect to work. It will include the wine glasses you’re sending to the friend, our bodies, computer systems.
+* Antifragile: These gain from volatility. It’s performance thrives when confronted with volatility.
 
 Sign later writes of the challenges with building more fault tolerant systems:
 
-> *Traditionally we have been designing software systems trying to make them robust and we expect them to work under all conditions.This is becoming more challenging as software is becoming much more complex and the number of components is increasing. *
+> "Traditionally we have been designing software systems trying to make them robust and we expect them to work under all conditions.This is becoming more challenging as software is becoming much more complex and the number of components is increasing."
 
 Within a few paragraphs he then makes the following statement: 
 
-> *We spend a great deal of effort in making a system robust but much in making it antifragile.The rough equivalent of antifragile is resilience in common language - it is an attribute of a system that enables it to deal with failure in a way that doesn’t cause the entire system to fail. *
+> "We spend a great deal of effort in making a system robust but [not] much in making it antifragile.The rough equivalent of antifragile is resilience in common language - it is an attribute of a system that enables it to deal with failure in a way that doesn’t cause the entire system to fail."
 
-Referring to the earlier definition from Taleb that Singh provided we see that antifragility MUST be beyond resilience, and as Singh's work continues, the only solutions brought forward simply increase resilience or robustness, not antifragility at all.
+Referring to the earlier definition from Taleb we see that antifragility MUST be beyond resilience, and as Singh's work continues, the only solutions brought forward simply increase resilience or robustness, not antifragility at all.
+
 Singh's solutions that will be discussed later:
 
- * Create fault tolerant applications
- * Regularly induce failures to reduce uncertainty
+* Create fault tolerant applications
+* Regularly induce failures to reduce uncertainty
 
 
 ## Finding Fragility
