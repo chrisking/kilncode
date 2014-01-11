@@ -1,5 +1,15 @@
-name: Kilncode.com
-markdown: redcarpet
-pygments: true
-description: Kilncode.com, Thoughts on the Creation of Software
+# Dependencies
+markdown:         redcarpet
+pygments:         true
+
+# Permalinks
+permalink:        pretty
+
+# Setup
+title:            Kilncode
+tagline:          Thoughts on the Creation of Software
+description:      Thoughts on the Creation of Software
 url: http://klincode.com
+
+
+paginate:         5

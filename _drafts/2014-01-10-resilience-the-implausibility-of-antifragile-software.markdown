@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Resilience, The Implausibility of Antifragile Software"
+title:  "The Implausibility of Antifragile Software"
 date:   2013-12-31 18:59:03
-categories: software engineering, systems theory
+tags: software engineering, systems theory
 author: Chris King
 ---
 
@@ -50,7 +50,7 @@ Singh's definitions as mentioned above( *these may be confusing* ):
 * Robust : This is the normal condition of most of the products we expect to work. It will include the wine glasses you’re sending to the friend, our bodies, computer systems.
 * Antifragile: These gain from volatility. It’s performance thrives when confronted with volatility.
 
-Sign later writes of the challenges with building more fault tolerant systems:
+Singh later writes of the challenges with building more fault tolerant systems:
 
 > "Traditionally we have been designing software systems trying to make them robust and we expect them to work under all conditions.This is becoming more challenging as software is becoming much more complex and the number of components is increasing."
 
