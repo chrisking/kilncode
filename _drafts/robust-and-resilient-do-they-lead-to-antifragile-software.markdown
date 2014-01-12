@@ -8,11 +8,11 @@ author: Chris King
 
 ## Intro
 
-In the field of software engineering, we as developers are always striving for improvements in our process of building software. We seek to improve the total throughput of our systems, their scalability to performance demands, and the clarity of the codebase. During this search, countless methodologies have been created (Test Driven Development, Agile, Waterfall, Domain Driven Development, Behavior Driven Development, etc), these methodologies all are constantly evoloving and changing due to research in our own field, and in others like behavioral economics, complexity theory, and systems theory.
+In the field of software engineering, we as developers are always striving for improvements in our process of building software. We seek to improve the total throughput of our systems, their scalability to performance demands, and the clarity of the codebase. During this search, countless methodologies have been created (Test Driven Development, Agile, Waterfall, Domain Driven Development, Behavior Driven Development, etc), these methodologies all are constantly evolving and changing due to research in our own field, and in others like behavioral economics, complexity theory, and systems theory.
 
-The key to understanding and learning from any discipline is clear communication of the ideas and concepts that are being discussed. This article aims to illustrate ways in which a few developers have misinterpreted the research on antifragility, and then to properly tie what our discipline is doing to acheive robust and resilient systems, and how antifragility does not make sense as a goal.
+The key to understanding and learning from any discipline is clear communication of the ideas and concepts that are being discussed. This article aims to illustrate ways in which a few developers have misinterpreted the research on antifragility, and then to properly tie what our discipline is doing to achieve robust and resilient systems, and how antifragility does not make sense as a goal.
 
-The concepts of fragility, robustness, resilience, and antifragility are useful models to classify the strengths and weaknesses of a system. By understanding these concepts we can hope to identify how much we should rely on our applications and what we can do to improve our aplications.
+The concepts of fragility, robustness, resilience, and antifragility are useful models to classify the strengths and weaknesses of a system. By understanding these concepts we can hope to identify how much we should rely on our applications and what we can do to improve our applications.
 
 ## What is Antifragile?
 
@@ -69,7 +69,7 @@ So what would antifragile software actually look like? Ideally it would be a sys
 
 ## Finding Fragility
 
-The journey towards a robust and resilient application starts with understandhing how software can be fragile, and how to buffer it from fragile to robust. Below is a simple Python example of a function to illustrate fragility.
+The journey towards a robust and resilient application starts with understanding how software can be fragile, and how to buffer it from fragile to robust. Below is a simple Python example of a function to illustrate fragility.
 
 ```python
 def add_numbers(numbers):
@@ -89,33 +89,33 @@ Providing unit tests would help prevent a developer from checking an error like 
 
 ## Robust Yet Fragile (RYF)
 
-Robust Yet Fragile is a term used to describe systems that are resilient in the face of anticipaetd dangers, but highly susceptable to unanticipated threats. This term was coined by California Institute of Technolgoy research scientist John Doyle.[Resilience p27](http://www.amazon.com/Resilience-Why-Things-Bounce-Back/dp/1451683812/ref=tmm_pap_swatch_0?_encoding=UTF8&sr=8-1&qid=1388748431)
+Robust Yet Fragile is a term used to describe systems that are resilient in the face of anticipaetd dangers, but highly susceptible to unanticipated threats. This term was coined by California Institute of Technology research scientist John Doyle.[Resilience p27](http://www.amazon.com/Resilience-Why-Things-Bounce-Back/dp/1451683812/ref=tmm_pap_swatch_0?_encoding=UTF8&sr=8-1&qid=1388748431)
 
 Our world is filled with examples of RYF systems, those who deal daily with anticipated issues like the electrical grid can handle many isolated failures, but if the failures start to cluster, this will yield a widespread power outage for many. A software example of RYF could be a web application that is served by 2 servers in a simple failover configuration. If both nodes experience a failure, the service will be knocked offline.
 
-RYF is easly to achieve with software, and is certainly a great starting point for a service, but what can we do to enable an application to actually be resilient?
+RYF is easy to achieve with software, and is certainly a great starting point for a service, but what can we do to enable an application to actually be resilient?
 
 ## Resilient Software
 
-The path to producing resilient software starts with identifying how one can leverage the tactics of "Sense, Scale, and Swarm."[Resilience p61](http://www.amazon.com/Resilience-Why-Things-Bounce-Back/dp/1451683812/ref=tmm_pap_swatch_0?_encoding=UTF8&sr=8-1&qid=1388748431) These tactics allow facilitate many feedback loops back to ones application, with the loops in place and proper thresholds defined for whatever metrics they capture, ones organization will be able to quickly adapt the appliation to many new issues.
+The path to producing resilient software starts with identifying how one can leverage the tactics of "Sense, Scale, and Swarm."[Resilience p61](http://www.amazon.com/Resilience-Why-Things-Bounce-Back/dp/1451683812/ref=tmm_pap_swatch_0?_encoding=UTF8&sr=8-1&qid=1388748431) These tactics allow facilitate many feedback loops back to ones application, with the loops in place and proper thresholds defined for whatever metrics they capture, ones organization will be able to quickly adapt the application to many new issues.
 
 For this example we will assume that one have a web application and we will illustrate how leveraging technology from [Amazon Web Services](http://aws.amazon.com/), [New Relic](http://newrelic.com/), or [Open Stack](http://www.openstack.org/) can help facilitate the feedback loops of sense, scale, and swarm.
 
-Just as one rely on ones senses before performing many actions, the other steps of scaling and swarming cannot be performed intelligently without sensing exactly how things are changing in ones application. Using monitoring services like [New Relic](http://newrelic.com/), application developers can sense when performance impacting conditions are occuring. Such conditions could be a simple traffic spike, memory leaks, infrastructure failure, or a simple bad new deployment. With real time performance metrics constantly available, it becomes easy to quickly identify the cause of new problems and to determine how best to react to them.
+Just as one relies on one's senses before performing many actions, the other steps of scaling and swarming cannot be performed intelligently without sensing exactly how things are changing in ones application. Using monitoring services like [New Relic](http://newrelic.com/), application developers can sense when performance impacting conditions are occurring. Such conditions could be a simple traffic spike, memory leaks, infrastructure failure, or a simple bad new deployment. With real time performance metrics constantly available, it becomes easy to quickly identify the cause of new problems and to determine how best to react to them.
 
 Scaling can often resolve many sudden traffic spikes or resource issues, and with [AWS](http://aws.amazon.com/) or 
 [Open Stack](http://www.openstack.org/) is easy and in many cases can be fully automated based on information from the sensing infrastructure. In AWS this is called Auto Scaling and more can be learned from their [official documentation](http://aws.amazon.com/autoscaling/).
 
 Focusing on the important metrics via sensing and increasing the supply of computing power or talented developers in scaling the only remaining thing is intelligent usage of that information. The intelligent usage of these pieces of information and the combination of resources towards tackling a problem is swarming. Netflix is a well-known example of using continual swarming behavior to ensure their service operates as intended. 
 
-A few years ago Netflix started a program called [Chaos Monkey](https://github.com/Netflix/SimianArmy), this tool lets Netflix test its ability to sense, scale, and swarm automatically by destroying virtual machines running core bits of Netflix's infrastructre. With random small pieces of their production infrasctructure being constantly removed they could quickly see which pieces of their infrascture could heal itself automatically and which pieces needed more work. The program was incredibly successful in helping Netflix reduce downtime and they have extended it since then to many more specialized chaos enducing applications. An even more destructive entity has also gained a bit of popularity called [Chaos Gorilla](https://github.com/Netflix/SimianArmy), like its monkey counterpoart it deletes components of the Netflix infrasctructure but instead of just virtual machines it simulates the outage of entire availability zones. A full list of their simian agents can be found [here](http://techblog.netflix.com/2011/07/netflix-simian-army.html). When the infrastructure of an application can take the removal of an entire geographic region of servers and continue to operate as intended, it is safe to say it is truly a resilient application.
+A few years ago Netflix started a program called [Chaos Monkey](https://github.com/Netflix/SimianArmy), this tool lets Netflix test its ability to sense, scale, and swarm automatically by destroying virtual machines running core bits of Netflix's infrastructure. With random small pieces of their production infrastructure being constantly removed they could quickly see which pieces of their infrastructure could heal itself automatically and which pieces needed more work. The program was incredibly successful in helping Netflix reduce downtime and they have extended it since then to many more specialized chaos inducing applications. An even more destructive entity has also gained a bit of popularity called [Chaos Gorilla](https://github.com/Netflix/SimianArmy), like its monkey counterpart it deletes components of the Netflix infrastructure but instead of just virtual machines it simulates the outage of entire availability zones. A full list of their simian agents can be found [here](http://techblog.netflix.com/2011/07/netflix-simian-army.html). When the infrastructure of an application can take the removal of an entire geographic region of servers and continue to operate as intended, it is safe to say it is truly a resilient application.
 
 Singh as aforementioned said the two components of an antifragile software entity are fault tolerance and regular induction of failures. Here we see that Netflix has accomplished this and that yet they are still vulnerable to a Black Swan event, so while resilient, they are not antifragile yet.
 
 
 ## Conclusion
 
-Antifragile pieces of software that are self modifying may become more common place in the future as artificial intelligence methods improve but we seem to be a ways away from those now. Until then, resilience provides the best means of ensuring the continued success of our products. Even if a Black Swan should arise and destroy the industry the application exists for, it does not necessarily matter. The skills to understand problems are in the heads of developers, and the lessons learned building a resilient platform can be utalized to build whatever software this new world demands. In that way we as developers are certainly antifragile ourselves, even if our software is not.
+Antifragile pieces of software that are self modifying may become more commonplace in the future as artificial intelligence methods improve but we seem to be a ways away from those now. Until then, resilience provides the best means of ensuring the continued success of our products. Even if a Black Swan should arise and destroy the industry the application exists for, it does not necessarily matter. The skills to understand problems are in the heads of developers, and the lessons learned building a resilient platform can be utilized to build whatever software this new world demands. In that way we as developers are certainly antifragile ourselves, even if our software is not.
 
 ### Further Reading: 
 
