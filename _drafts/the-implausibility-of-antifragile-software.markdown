@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "The Implausibility of Antifragile Software"
+title:  "Robust and Resilient, do they lead to Antifragile Software?"
 date:   2014-01-12 18:59:03
 tags: software engineering, systems theory, antifragility, resilient, robust yet fragile
 author: Chris King
@@ -10,7 +10,7 @@ author: Chris King
 
 In the field of software engineering, we as developers are always striving for improvements in our process of building software. We seek to improve the total throughput of our systems, their scalability to performance demands, and the clarity of the codebase. During this search, countless methodologies have been created (Test Driven Development, Agile, Waterfall, Domain Driven Development, Behavior Driven Development, etc), these methodologies all are constantly evoloving and changing due to research in our own field, and in others like behavioral economics, complexity theory, and systems theory.
 
-The key to understanding and learning from any discipline is clear communication of the ideas and concepts that are being discussed. This article aims to illustrate ways in which a few developers have misinterpreted the research on antifragility, and then to properly tie what our discipline is doing to the concepts of antifragility.
+The key to understanding and learning from any discipline is clear communication of the ideas and concepts that are being discussed. This article aims to illustrate ways in which a few developers have misinterpreted the research on antifragility, and then to properly tie what our discipline is doing to acheive robust and resilient systems, and how antifragility does not make sense as a goal.
 
 The concepts of fragility, robustness, resilience, and antifragility are useful models to classify the strengths and weaknesses of a system. By understanding these concepts we can hope to identify how much we should rely on our applications and what we can do to improve our aplications.
 
@@ -31,10 +31,10 @@ perception by individuals
 
 Before continuing it would be useful to define all of the core terms and how they will be used through this article:
 
-* Fragile - (of an object) easily broken or damaged (Merriam-Webster)[http://www.merriam-webster.com/dictionary/fragile]
-* Resilient - The capacity of a system, enterprise, or a person to maintain its core purpose and integrity in the face of dramatically changed circumstances. (Resilience p7)
-* Robust - A system or entity that has been hardened so that it is not easily broken, while lacking the recovery abilities of a resilient system. ( Resilience p13)
-* Antifragile - "Beyond resilience or robustness. The resilient resists shocks and stays the same; the antifragile gets better." [excerpt here](http://www.fooledbyrandomness.com/prologue.pdf)
+* Fragile - (of an object) easily broken or damaged [Merriam-Webster](http://www.merriam-webster.com/dictionary/fragile)
+* Resilient - The capacity of a system, enterprise, or a person to maintain its core purpose and integrity in the face of dramatically changed circumstances. [Resilience p7](http://www.amazon.com/Resilience-Why-Things-Bounce-Back/dp/1451683812/ref=tmm_pap_swatch_0?_encoding=UTF8&sr=8-1&qid=1388748431)
+* Robust - A system or entity that has been hardened so that it is not easily broken, while lacking the recovery abilities of a resilient system. [Resilience p13](http://www.amazon.com/Resilience-Why-Things-Bounce-Back/dp/1451683812/ref=tmm_pap_swatch_0?_encoding=UTF8&sr=8-1&qid=1388748431)
+* Antifragile - "Beyond resilience or robustness. The resilient resists shocks and stays the same; the antifragile gets better." [Antifragile exerpt](http://www.fooledbyrandomness.com/prologue.pdf)
 
 Given how many people have struggled with fragile software, antifragile software seems like an amazing goal to have, but what would that actually look like? Can code actually become stronger when chaos and failures are hurled at it?
 
@@ -65,10 +65,11 @@ Singh's solutions that will be discussed later:
 * Create fault tolerant applications
 * Regularly induce failures to reduce uncertainty
 
+So what would antifragile software actually look like? Ideally it would seem to encompass a system that meets all the criteria for a robust and resilient system yet it should also be able to dynamically change itself and all of its metrics autonomously. These types of systems have been created but are incredibly complex and generally fall out of the purview of most applications. The applications that are not self modifying will be what is focused on in this article as these are the applications that many developers find themselves working with most often.
 
 ## Finding Fragility
 
-Let's start with a simple Python example of a function:
+The journey towards a robust and resilient application starts with understandhing how software can be fragile, and how to buffer it from fragile to robust. Below is a simple Python example of a function to illustrate fragility.
 
 ```python
 def add_numbers(numbers):
@@ -109,19 +110,13 @@ Focusing on the important metrics via sensing and increasing the supply of compu
 
 A few years ago Netflix started a program called [Chaos Monkey](https://github.com/Netflix/SimianArmy), this tool let Netflix test its ability to sense, scale, and swarm automatically by destroying virtual machines running core bits of Netflix's infrastructre. With random small pieces of their production infrasctructure being constantly removed they could quickly see which pieces of their infrascture could heal itself automatically and which pieces needed more work. The program was incredibly successful in helping Netflix reduce downtime and they have extended it since then to many more specialized chaos enducing applications. An even more destructive entity has also gained a bit of popularity called [Chaos Gorilla](https://github.com/Netflix/SimianArmy), like its monkey counterpoart it deletes components of the Netflix infrasctructure but instead of just virtual machines it simulates the outage of entire availability zones. A full list of their simian agents can be found [here](http://techblog.netflix.com/2011/07/netflix-simian-army.html). When the infrastructure of an application can take the removal of an entire geographic region of servers and continue to operate as intended, it is safe to say it is truly a resilient application.
 
-Singh as aforementioned said the two components of an antifragile software entity are fault tolerance and regular induction of failures. Here we see that Netflix has accomplished this and that yet they are still vulnerable to a Black Swan event, so while resilient, they are not antifragile.
+Singh as aforementioned said the two components of an antifragile software entity are fault tolerance and regular induction of failures. Here we see that Netflix has accomplished this and that yet they are still vulnerable to a Black Swan event, so while resilient, they are not antifragile yet.
 
 
 ## Conclusion
 
-By creating robust yet fragile software, we are removing many known issues such as single server failure or data loss. We have done nothing to address the impact of a Black Swan, as by definition, we cannot do anything, and having done all we can
-
-Given the complexity from distrubted systems we are probably opening ourselves up to many more potential Black Swans. We are a the same time removing a ton of known issues and deploying software that is resilient to most of our known attackers, and given the dynamic nature of our industry that is probably the smart thing to do.
-
-Rather than focusing on making software antifragile (Some form of intelligent AI that rewrites itself upon a stressor), we gain by creating simpler projects that properly handle a known set of conditions and address some need we as humans have identified.
-
-This should be enough for developers to deal with, if a Black Swan occurs, a simpler path is to take what has been learned before and leverage that in the new environment. In this way, we may be antifragile, but there is no need to pretend our creations are. 
-
+Antifragile pieces of software that are self modifying may become more common place in the future as artificial intelligence methods improve but we seem to be a ways away from those now. Until the resilience provides us as software developers the best means of ensuring the continued success of our products. Even if a Black Swan should arise and destroy the industry the application exists for, it does not necessarily matter. The skills to understand problems are in the heads of your developers, and the lessons learned building a resilient platform can be utalized to build whatever software this new world demands. In that way we as developers are certainly antifragile ourselves, even if our software is not.
+ 
 ### Further Reading: 
 
 ##### Antifragile:
