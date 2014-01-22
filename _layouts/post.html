@@ -4,7 +4,7 @@ layout: default
 
 <div class="post">
   <h1 class="post-title">{{ page.title }}</h1>
-  <span>By: {{ page.author }}</span>
+  <p>By: {{ page.author }}</p>
   <span class="post-date">{{ page.date | date_to_string }}</span>
   {{ content }}
 </div>
@@ -17,7 +17,7 @@ layout: default
         <h3>
           <a href="{{ post.url }}">
             {{ post.title }}
-            <small> By: {{ page.author }} </small>
+            <small> By: {{ post.author }} </small>
             <small>{{ post.date | date_to_string }}</small>
           </a>
         </h3>
